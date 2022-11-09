@@ -33,13 +33,13 @@ elif randomno == 3:
 
 # Input taken from user    
 you = input("you choose snake(s) or water(W) or gun(g)?")
-a=gamewin(comp, you)
+a = gamewin(comp, you)
 print(f"Computer choose {comp}")  # will show option selected by computer
 print(f"You choose {you}") # will show option selected by user
 
 
 # will dislplay result of the game
-if a==None:
+if a == None:
     print("Its a Tie!")
 elif a == True:
     print("You Win!")
@@ -49,6 +49,4 @@ elif a == False:
 
 
 
-# you need to to use random module outside def function
-# characters should be in ''
-# a variable is the output of defined function
+
