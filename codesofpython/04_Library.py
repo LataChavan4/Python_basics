@@ -1,4 +1,4 @@
-
+list = ['ikigai','alchemist','atomic habit','secrets']
 book_list = {'ikigai': 'available',
                 'alchemist':'lata',
                 'atomic Habit' : 'available',
@@ -12,20 +12,9 @@ if (book_list.get(request)) == 'Available':
     if confirmation == 'Y':
         book_list[request] = name
         print("Book has been alloted to you, Thank you for visiting our library")
-elif (book_list.get(request)) == 'None':
+elif (book_list.get(request)) == None:
     print("Sorry the book you want to read is not available in our library, will try to get it as soon as possible\n")
+    print(f' here is the list of books available{list}')
 else:
-    print(f"Sorry..The book you want to read is with {(book_list.get(request))} we will notify you once its available")
-
-
-    
-
-
-
-# if request in available_books:
-#     print(f"{request} is available in library et me check current its status")
-# else:
-#     print(f"Sorry..{request} is not available in this library")
-
-
+    print(f"Sorry..The book you want to read is with {(book_list.get(request))}, we will notify you once its released by the user")
 
