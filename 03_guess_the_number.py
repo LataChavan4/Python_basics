@@ -4,7 +4,7 @@ count = 0
 number=None
 while (number!= systemno):
     count+=1
-    number = int(input("Guess the number: "))
+    number = int(input("Guess the number between 1 to 100: "))
     if (number==systemno):
         print("You guessed it correctly")
     else:
