@@ -1,0 +1,8 @@
+# You can create parallel python environment using 
+pip install virtualenv
+
+#once installation is done you need to activate this environment by using 
+$ source virtualenv_name/bin/activate
+
+To deactivate it type in terminal
+Deactivate
