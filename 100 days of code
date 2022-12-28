@@ -1,0 +1,31 @@
+
+print("Welcome to the Love Calculator!")
+name1 = input("What is your name? \n")
+name2 = input("What is their name? \n")
+
+
+combined = name1 + name2
+lowercase = combined.lower()
+t = lowercase.count('t')
+r = lowercase.count('r')
+u = lowercase.count('u')
+e = lowercase.count('e')
+
+true = t + r + u + e
+
+l = lowercase.count('l')
+o = lowercase.count('o')
+v = lowercase.count('v')
+e = lowercase.count('e')
+
+love = l + o + v + e
+
+score = str(true) + str(love)
+
+
+if int(score) < 10 or int(score) > 90:
+    print(f"Your score is {score}, you go together like coke and mentos.")
+elif int(score) >= 40 and int(score) <= 50:
+    print(f"Your score is {score}, you are alright together.")
+else:
+    print(f"Your score is {score}")
