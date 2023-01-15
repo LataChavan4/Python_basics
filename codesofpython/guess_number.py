@@ -14,7 +14,7 @@ def guess_number():
     print(f"You have {guess_count} attempts remaining to guess the number.")
 
 
-    actual_number = random.randint(1,101)
+    actual_number = random.randint(1,100) # randint includes both numbers in range 
     print(actual_number)
     continue_game = True
 
