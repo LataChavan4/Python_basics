@@ -32,12 +32,18 @@ resources = {
 machine_sate = True
 
 def get_resourcesrequired(choice):
-    coffee = MENU[choice]["ingredients"]
+    coffee_type = MENU[choice]["ingredients"]
     water = coffee["water"]
     milk = coffee["milk"]
     coffee = coffee["coffee"]
     return f"Required ingredients are water = {coffee.water}, milk = {coffee.milk}, coffee = {coffee.coffee} "
-    print(coffee)
+    if water >= resources["water"] and milk >= resources["milk"] and coffee >= resources["coffe"]:
+        resources["water"] = resources["water"] - water
+        resources["milk"] = resources["milk"] - milk
+        resources["coffee"] = resources["coffee"] - coffee
+        print(f"Here is your {choice}. Enjoy!")
+
+
 
 #TODO1: 1. Prompt user by asking “What would you like? (espresso/latte/cappuccino):”
 
@@ -49,3 +55,22 @@ if choice == 'off':
 elif choice == 'report':
     print(resources)
 
+print("Please insert coins.")
+quaters = int(input("How many quaters?: "))
+dimes = int(input("How many dimes?: "))
+nickels = int(input("How many nickels?: "))
+penny = int(input("How many penny?: "))
+
+total_amount = ((quaters*25) + (dimes*10) + (nickels*5) + (penny))/100
+cost = MENU[choice]["cost"]
+if cost > total_amount:
+    print("Sorry that's not enough money. Money refunded.")
+if cost < total_amount:
+    change = (total_amount - cost)
+    print(f"Here is $ {change} in change.")
+
+
+
+    
+
+    
