@@ -32,6 +32,7 @@ resources = {
 machine_sate = True
 
 def get_resourcesrequired(choice):
+    ''' check resources required'''
     coffee_type = MENU[choice]["ingredients"]
     water = coffee["water"]
     milk = coffee["milk"]
