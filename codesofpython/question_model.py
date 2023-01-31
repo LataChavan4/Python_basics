@@ -6,5 +6,5 @@ class QuizBrain:
 
     def next_question(question_number, q_list):
         
-        user_answer = input(" Q.{question_number} {question.text}, Type True or False: ")
+        user_answer = input(f" Q.{question_number} {question.text}, Type True or False: ")
 
