@@ -5,11 +5,13 @@ import random
 timmy = Turtle()
 screen = Screen()
 
+### Drwaing triangle, square, hexagon, pentagon ###
+
 colors = ['Purple', 'Blue', 'Green', 'Orange', 'Red','Gray', 'Brown', 'Lime']
 def draw_pattern(side_length, number_of_sides):
     timmy.color(random.choice(colors))
     for i in range(number_of_sides):
-        timmy.forward(side_length)
+        timmy.forward(side_length) 
         timmy.right(360/number_of_sides)
 
 
