@@ -1,4 +1,4 @@
-
+import turtle
 from turtle import Turtle
 import time
 
@@ -8,6 +8,8 @@ LEFT = 180
 RIGHT = 0
 
 class Snake:
+    head: Turtle
+
     def __init__(self):
         self.tims = []
 
@@ -19,6 +21,7 @@ class Snake:
             tim_i.penup()
             tim_i.goto((0 - i * 20), 0)
             self.tims.append(tim_i)
+            self.head = self.tims[0]
 
 
     def move (self):
@@ -26,20 +29,21 @@ class Snake:
             x_cor = self.tims[i - 1].xcor()
             y_cor = self.tims[i - 1].ycor()
             self.tims[i].goto(x_cor, y_cor)
-        self.tims[0].forward(20)
+        self.head.forward(20)
 
     def up (self):
-        if self.tims[0].heading() != DOWN:
-            self.tims[0].seth(UP)
+        if self.head.heading() != DOWN:
+            self.head.seth(UP)
 
     def down (self):
-        if self.tims[0].heading() != UP:
-            self.tims[0].seth(DOWN)
+        if self.head.heading() != UP:
+            self.head.seth(DOWN)
 
     def right (self):
-        if self.tims[0].heading() != LEFT:
-            self.tims[0].seth(RIGHT)
+        if self.head.heading() != LEFT:
+            self.head.seth(RIGHT)
 
     def left (self):
-        if self.tims[0].heading() != RIGHT:
-            self.tims[0].seth(LEFT)
+        if self.head.heading() != RIGHT:
+            self.head.seth(LEFT)
+
