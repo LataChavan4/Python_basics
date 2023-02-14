@@ -2,6 +2,7 @@ import turtle
 from turtle import Turtle
 import time
 
+STARTING_POSITIONS = [(0, 0), (-20, 0), (-40, 0)]
 UP = 90
 DOWN = 270
 LEFT = 180
@@ -14,17 +15,23 @@ class Snake:
         self.tims = []
 
 
-        for i in range(0, 3):
-            tim_i = Turtle("square", 20)
-            tim_i.speed("slowest")
-            tim_i.color("white")
-            tim_i.penup()
-            tim_i.goto((0 - i * 20), 0)
-            self.tims.append(tim_i)
+        for position in STARTING_POSITIONS:
+            self.add_segment(position)
             self.head = self.tims[0]
 
 
-    def move (self):
+    def add_segment(self,position):
+        tim_i = Turtle("square", 20)
+        tim_i.speed("slowest")
+        tim_i.color("white")
+        tim_i.penup()
+        tim_i.goto(position)
+        self.tims.append(tim_i)
+
+    def extend(self):
+        self.add_segment(self.tims[-1].position())
+
+    def move(self):
         for i in range((len(self.tims) - 1), 0, -1):
             x_cor = self.tims[i - 1].xcor()
             y_cor = self.tims[i - 1].ycor()
