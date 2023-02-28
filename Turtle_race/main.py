@@ -18,7 +18,7 @@ for color in colors:
 
 if user_bet:
     game_on = True
-
+### moving turtle ###
 while game_on:
     for turtle in turtles:
         if turtle.xcor() > 230:
