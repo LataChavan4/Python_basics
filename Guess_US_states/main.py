@@ -11,7 +11,10 @@ state.hideturtle()
 
 screen = turtle.Screen()
 screen.title("U.S. States Game")
-image = "blank_states_img.gif"
+
+
+#importing US state image"
+image = "blank_states_img.gif"  
 screen.addshape(image)
 turtle.shape(image)
 
@@ -19,7 +22,7 @@ data = pandas.read_csv("50_states.csv")
 all_states = data.state.to_list()
 
 
-
+# playing loop until we guess all 50 states #
 while score != 50:
     user_guess = screen.textinput(title= f"{score}/50 Guessed states", prompt="What's another state name?").title()
 
@@ -33,6 +36,7 @@ while score != 50:
         state.write(user_guess, align='center', font=("Aerial", 12, "normal"))
         score += 1
         
+# listing all states which user has not been able to guess ##
 states_to_learn = set(all_states) ^ set(guessed_states)
 detail = pandas.DataFrame(states_to_learn)
 detail.to_csv("States_to_learn.csv")
