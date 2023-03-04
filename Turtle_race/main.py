@@ -5,8 +5,10 @@ screen = Screen()
 colors = ["red", "blue", "green", "yellow", "pink", "orange"]
 turtles =[]
 screen.setup(500,400)
+## ask user to guess which color will win the race ##
 user_bet = screen.textinput(title="Guess", prompt="Guess the turtle which will win the race")
 
+## creating turtles of different colors ##
 i = 0
 for color in colors:
     tim_i = Turtle("turtle")
