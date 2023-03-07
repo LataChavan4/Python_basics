@@ -8,7 +8,7 @@ alpha = {row.letter : row.code for (index, row) in data.iterrows()}
 
 
 # Create a list of the phonetic code words from a word that the user inputs.
-user_input = input("Enter the word: ").upper()
+user_input = input("Enter the word: ").upper() ## converting user input into uppercase ##
 phonetic_code = []
 for letter in user_input:
     phonetic_code.append(alpha[letter])
