@@ -22,6 +22,7 @@ def generate_password():
     # for char in password_list:
     #   password += char
     password.insert(0, password_)
+    ## To copy password on clipboard ##
     pyperclip.copy(password_)
 # ---------------------------- SAVE PASSWORD ------------------------------- #
 def save():
