@@ -1,4 +1,5 @@
 data = pandas.read_csv("nato_phonetic_alphabet.csv")
+### converting csv file data to dictonary##
 alphabets = data.to_dict()
 print(data)
 
