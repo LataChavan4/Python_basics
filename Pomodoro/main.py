@@ -60,7 +60,7 @@ window = Tk()
 window.title("Pomodoro")
 window.config(padx=100, pady=50, bg=GREEN)
 
-
+## canvas needs to be created before adding image in screen ##
 canvas = Canvas(width=200, height=224, bg=GREEN, highlightthickness=0)
 tomato_image = PhotoImage(file="tomato.png")
 canvas.create_image(100, 112, image=tomato_image)
