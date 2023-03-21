@@ -1,6 +1,7 @@
 from tkinter import *
 from tkinter import messagebox
 import pyperclip
+Import json
 
 # ---------------------------- PASSWORD GENERATOR ------------------------------- #
 #Password Generator Project
@@ -39,6 +40,8 @@ def save():
                 f.write(f" {site} | {id} | {pswrd}\n")
             password.delete(0, END)
             website_input.delete(0, END)
+
+### using json file to fetch data ###
 
 # ---------------------------- UI SETUP ------------------------------- #
 
