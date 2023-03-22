@@ -36,7 +36,7 @@ def save():
     else:
         con = messagebox.askokcancel(title=site, message=f"The details entered are as follows:\n email: {id}\n password: {pswrd}")
         if con:
-            with open ("data.txt", "a") as f:
+            with open ("data.json", "w") as f:
                 f.write(f" {site} | {id} | {pswrd}\n")
             password.delete(0, END)
             website_input.delete(0, END)
