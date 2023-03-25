@@ -25,6 +25,19 @@ def generate_password():
     password.insert(0, password_)
     pyperclip.copy(password_)
 # ---------------------------- SAVE PASSWORD ------------------------------- #
+def find ():
+    site = website_input.get()
+
+    with open("data.json", "r") as file:
+        data = json.load(file)
+        id = data[site]['email']
+        pswrd = data[site]
+        result = messagebox.showinfo(title=site,
+                                     message=f" email: {id}\n password: {pswrd}")
+
+
+
+
 def save():
 
     pswrd = password.get()
@@ -41,12 +54,19 @@ def save():
     else:
     #     con = messagebox.askokcancel(title=site, message=f"The details entered are as follows:\n email: {id}\n password: {pswrd}")
     #     if con:
-        with open("data.json", "r") as file:
-            data = json.load(file)
-            data.update(new_data)
-        with open("data.json", "w") as file:
-            json.dump(data, file, indent=4)
+        try:
+            with open("data.json", "r") as file:
+                data = json.load(file)
 
+        except(FileNotFoundError):
+            with open("data.json", "w") as file:
+                json.dump(new_data, file, indent=4)
+        else:
+            data.update(new_data)
+            with open("data.json", "w") as file:
+                json.dump(data, file, indent=4)
+
+        finally:
             password.delete(0, END)
             website_input.delete(0, END)
 
@@ -93,5 +113,8 @@ add.grid(column=1, row=4, columnspan=2)
 
 generate_pass = Button(text="Generate Password", command=generate_password)
 generate_pass.grid(column=2, row=3)
+
+search = Button(text="Search", width=15)
+search.grid(column=2, row=1)
 
 window.mainloop()
