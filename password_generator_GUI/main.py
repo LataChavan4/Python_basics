@@ -30,11 +30,13 @@ def find ():
 
     with open("data.json", "r") as file:
         data = json.load(file)
-        id = data[site]['email']
-        pswrd = data[site]
-        result = messagebox.showinfo(title=site,
-                                     message=f" email: {id}\n password: {pswrd}")
-
+        if site in data:
+            id = data[site]['email']
+            pswrd = data[site]['password']
+            result = messagebox.showinfo(title=site,
+                                         message=f" email: {id}\n password: {pswrd}")
+        else:
+            error = messagebox.showinfo(title="Error",message="No Data file found" )
 
 
 
@@ -114,7 +116,7 @@ add.grid(column=1, row=4, columnspan=2)
 generate_pass = Button(text="Generate Password", command=generate_password)
 generate_pass.grid(column=2, row=3)
 
-search = Button(text="Search", width=15)
+search = Button(text="Search", width=15, command=find)
 search.grid(column=2, row=1)
 
 window.mainloop()
