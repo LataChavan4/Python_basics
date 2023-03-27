@@ -27,16 +27,19 @@ def generate_password():
 # ---------------------------- SAVE PASSWORD ------------------------------- #
 def find ():
     site = website_input.get()
-
-    with open("data.json", "r") as file:
-        data = json.load(file)
+    try:
+        with open("data.json", "r") as file:
+            data = json.load(file)
+    except FileNotFoundError:
+        no_file = messagebox.showinfo(title="Error", message="No Data file found")
+    else:
         if site in data:
             id = data[site]['email']
             pswrd = data[site]['password']
             result = messagebox.showinfo(title=site,
                                          message=f" email: {id}\n password: {pswrd}")
         else:
-            error = messagebox.showinfo(title="Error",message="No Data file found" )
+            error = messagebox.showinfo(title="Error", message=f"Details for {site} does not exist")
 
 
 
@@ -95,12 +98,12 @@ password_label.grid(column=0, row=3)
 
 
 ### Text ####
-website_input = Entry(width=50)
-website_input.grid(row=1, column=1, columnspan=2)
+website_input = Entry(width=32)
+website_input.grid(row=1, column=1)
 #### To put cursor in entry box ###
 website_input.focus()
 
-email_input = Entry(width=50)
+email_input = Entry(width=51)
 email_input.grid(row=2, column=1, columnspan=2)
 ### 0/END represents index at which we want to display cursor ###
 email_input.insert(0, "latuchavan@gmail.com")
