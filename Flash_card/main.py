@@ -19,6 +19,7 @@ except FileNotFoundError:
 else:
     word_dict = data.to_dict(orient="records")
 
+##Fuction to get new word##
 def next_word():
     global current_card, flip_timer, word_dict
     window.after_cancel(flip_timer)    ### to avoid getting incorrect word after flip ###
@@ -28,6 +29,7 @@ def next_word():
     canvas.itemconfig(word, text= current_card["French"], fill="Black")
     flip_timer = window.after(3000, func=flip_card)
 
+#Function to flip card ###
 def flip_card():
     canvas.itemconfig(card_background, image=card_back)
     canvas.itemconfig(lang, text="English", fill=WHITE)
