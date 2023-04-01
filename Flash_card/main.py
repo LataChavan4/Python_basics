@@ -35,6 +35,7 @@ def flip_card():
     canvas.itemconfig(lang, text="English", fill=WHITE)
     canvas.itemconfig(word, text=current_card["English"], fill=WHITE)
 
+ ##Function to remove word from list
 def is_known():
     global current_card, word_dict
     word_dict.remove(current_card)
