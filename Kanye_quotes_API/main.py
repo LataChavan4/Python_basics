@@ -1,6 +1,7 @@
 from tkinter import *
 import requests
 
+## to get new quote from kanye's sites UPI ##
 def get_quote():
     quote = requests.get("https://api.kanye.rest")
     next_quote = quote.json()
