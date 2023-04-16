@@ -9,6 +9,7 @@ PASSWORD= "password"
 MY_LAT =  # Your latitude
 MY_LONG = # Your longitude
 
+## Check if ISS is close to your location ##
 def is_iss_close():
     response = requests.get(url="http://api.open-notify.org/iss-now.json")
     response.raise_for_status()
@@ -28,6 +29,8 @@ parameters = {
     "formatted": 0,
 
 }
+
+## Check if its Dark outside ##
 def is_dark():
     response = requests.get("https://api.sunrise-sunset.org/json", params=parameters)
     response.raise_for_status()
