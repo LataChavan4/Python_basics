@@ -4,6 +4,8 @@ from quiz_brain import QuizBrain
 THEME_COLOR = "#375362"
 
 
+##GUI ##
+
 class Quizinterface:
 
     def __init__(self, quiz_brain: QuizBrain):
