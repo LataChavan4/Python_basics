@@ -6,6 +6,8 @@ weather_parameters={
 "lon":-6.266155,
 "appid":KEY,
 }
+
+## getting weather details from API ##
 response = requests.get(API, params=weather_parameters)
 response.raise_for_status()
 print(response.status_code)
