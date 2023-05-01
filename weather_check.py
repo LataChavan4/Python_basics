@@ -1,9 +1,9 @@
 import requests
-API = "https://api.openweathermap.org/data/2.5/weather"
+API = "https://api.openweathermap.org/data/2.5/weather"  ## UPI to get weather data ###
 KEY = "fbd3cfa6f04c0cb662f18301dd06905a"
 weather_parameters={
-"lat":53.350140,
-"lon":-6.266155,
+"lat": "Your location",
+"lon":"Your location",
 "appid":KEY,
 }
 
