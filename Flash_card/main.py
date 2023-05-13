@@ -78,4 +78,4 @@ wrong.grid(column=0, row=1)
 next_word()
 
 
-window.mainloop()
+window.mainloop()  ## will keep screen untiol we close it##
