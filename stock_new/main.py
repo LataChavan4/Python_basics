@@ -2,7 +2,7 @@ import requests
 import smtplib
 STOCK = "TSLA"
 COMPANY_NAME = "Tesla Inc"
-API_KEY = "VQEE2QMDAAQ5EIXJ"
+API_KEY = "USE API key obtained from given site "
 stock_api = f"https://www.alphavantage.co/query?function=TIME_SERIES_DAILY_ADJUSTED&symbol=TSLA&apikey={API_KEY}"
 
 ## STEP 1: Use https://www.alphavantage.co
